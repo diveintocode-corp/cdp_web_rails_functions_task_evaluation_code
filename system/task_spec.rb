@@ -43,10 +43,12 @@ RSpec.describe do
     end
     let!(:user){User.take}
     it 'プロフィール画像を選択してユーザ登録した際、詳細画面に遷移すること' do
+      sleep 1
       expect(current_path).to eq user_path(user.id)
     end
     it 'プロフィール画像を選択してユーザ登録した際、プロフィール画像を表示されること' do
       # 画像の全体パスだと投稿時刻によって変化するため、変化しない一部比較しテスト
+      sleep 1
       expect(page.find('img')['src']).to have_content '202021-01-08%2018.33.25%E3%81%AE%E3%82%B3%E3%83%94%E3%83%BC.png'
     end
   end
