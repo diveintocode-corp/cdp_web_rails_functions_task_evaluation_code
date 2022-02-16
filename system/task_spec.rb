@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe do
   describe do
-    it '1. `profile_image`カラム用の登録フォームが存在すること' do
+    it '1. `profile_image`カラムに対して画像を登録されるようにフォームが生成されていること' do
       visit new_user_path
       expect(find('input[name="user[profile_image]"]')).to be_visible
     end
