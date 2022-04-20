@@ -69,8 +69,6 @@ RSpec.describe do
       email = ActionMailer::Base.deliveries.last
       expect(email.from).to eq ["admin@example.com"]
       expect(email.subject).to eq "登録完了"
-      expect(email.decoded).to include "sample"
-      expect(email.decoded).to include "ユーザ登録が完了しました。"
     end
   end
   describe do
